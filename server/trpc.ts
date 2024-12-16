@@ -4,3 +4,4 @@ const t = initTRPC.create();
 
 export const trpcRouter = t.router;
 export const trpcProcedure = t.procedure;
+export const trpcCreateCallerFactory = t.createCallerFactory;

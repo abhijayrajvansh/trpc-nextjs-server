@@ -1,15 +1,12 @@
-'use client'
+import { trpc } from "@/client/ssr";
+import React from "react";
 
-import { trpc } from '@/client'
-import React from 'react'
+export default async function page() {
+  const allTodos = await trpc.todoAPI.getTodos();
 
-export default function page() {
-  
-  const allTodos = trpc.todoAPI.getTodos.useQuery()
-  
   return (
-    <div className='h-[90vh] flex items-center justify-center'>
-      {JSON.stringify(allTodos.data)}
+    <div className="h-[90vh] flex items-center justify-center">
+      {JSON.stringify(allTodos)}
     </div>
-  )
+  );
 }
