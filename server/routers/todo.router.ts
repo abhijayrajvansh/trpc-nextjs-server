@@ -15,4 +15,3 @@ export const todoRouter = trpcRouter({
     return { todo: input };
   })
 });
-

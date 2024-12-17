@@ -1,12 +1,9 @@
-import { trpc } from "@/client/ssr";
-import React from "react";
+import React from 'react'
+import ClientSideRendering from '@/components/ClientSideRendering'
+import ServerSideRedering from '@/components/ServerSideRendering'
 
-export default async function page() {
-  const allTodos = await trpc.todoAPI.getTodos();
-
-  return (
-    <div className="h-[90vh] flex items-center justify-center">
-      {JSON.stringify(allTodos)}
-    </div>
-  );
+const page = () => {
+  return <ClientSideRendering />
 }
+
+export default page
